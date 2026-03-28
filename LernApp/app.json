@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Lernapp",
+    "slug": "lernapp-anton",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#090B13"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundColor": "#090B13"
+      },
+      "package": "com.anton.lernapp",
+      "versionCode": 1
+    },
+    "platforms": ["android"]
+  }
+}
