@@ -19,6 +19,14 @@
       "package": "com.anton.lernapp",
       "versionCode": 1
     },
-    "platforms": ["android"]
+    "platforms": [
+      "android"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "10c183dc-272b-49d9-a794-46941bcb07ca"
+      }
+    },
+    "owner": "asphyxx"
   }
 }
