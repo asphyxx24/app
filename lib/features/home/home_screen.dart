@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mein_organizer/app.dart';
+import 'package:mein_organizer/features/notes/notes_provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
+    final noteCount = ref.watch(noteCountProvider);
+    final noteSubtitle = noteCount.when(
+      data: (count) => count > 0 ? '$count Notizen' : 'Texte & Zeichnungen',
+      loading: () => 'Texte & Zeichnungen',
+      error: (_, _) => 'Texte & Zeichnungen',
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -40,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                   _FeatureTile(
                     icon: Icons.edit_note_rounded,
                     label: 'Notizen',
-                    subtitle: 'Texte & Zeichnungen',
+                    subtitle: noteSubtitle,
                     color: const Color(0xFF4A6CF7),
                     onTap: () => _navigateToTab(context, 1),
                   ),
